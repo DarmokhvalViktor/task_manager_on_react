@@ -1,0 +1,260 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: url("neutral_background.jpg");
+    width: 99%;
+}
+
+#header {
+    display: flex;
+    /*justify-content: space-evenly;*/
+    align-items: center;
+    margin: 0;
+    padding-top: 5px;
+    padding-left: 5px;
+    text-align: center;
+}
+.main_calendar_container{
+    display: flex;
+    background-color: lightslategray;
+    border-radius: 10px;
+    box-shadow: 5px 10px 7px rgba(0, 0, 0, 0.7);
+}
+.right_calendar_block {
+    background:none;
+    min-height: 515px;
+    min-width: 300px;
+
+}
+#clock {
+    height: 50px;
+    font-size: 25px;
+    color: black;
+    font-weight: 800;
+}
+.formAndH1Holder {
+    width: 60%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+h1 {
+    color: darkslateblue;
+    margin: 0 0 20px 0;
+}
+.deleteAllTasks {
+    font-size: 20px;
+    background-color: lightcoral;
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 30px;
+    margin-left: 30px;
+    color: black;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.deleteAllTasks:hover {
+    scale: 1.1;
+    background: red;
+    color: white;
+}
+.sortByPriorityButton {
+    font-size: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.sortByPriorityButton:hover {
+    scale: 1.1;
+    background-color: gold;
+}
+.sortByTimeButton {
+    font-size: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.sortByTimeButton:hover {
+    scale: 1.1;
+    background-color: gold;
+}
+button {
+    border-radius: 10px;
+}
+#new_task_form {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#task_date_and_time_div {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+#label_for_date_time_due {
+    font-size: 20px;
+}
+#task_weight {
+    font-size: 20px;
+}
+.pickADateAndTime {
+    margin-top: 10px;
+    height: 25px;
+    border-radius: 10px;
+}
+.dateAndTimeDiv {
+    padding: 5px 0 0 10px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+}
+input::placeholder {
+    color: black;
+}
+#input_task {
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+    margin-right: 10px;
+    color: black;
+    font-size: 20px;
+}
+#submit_task {
+    font-size: 20px;
+    font-weight: 800;
+    height: 60px;
+    border-radius: 15px;
+    background-image: linear-gradient(to right, darkblue, darkred);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#submit_task:hover {
+    scale: 1.05;
+}
+h2 {
+    font-size: 40px;
+    text-align: center;
+    color: black;
+}
+h3 {
+    font-size: 32px;
+    font-weight: bold;
+}
+.textInParagraph {
+    font-size: 20px;
+    color: black;
+    padding: 10px 0 0 10px;
+    margin: 0;
+}
+.mainUl {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.task {
+    margin:1em;
+    cursor: pointer;
+}
+ul, li {
+    list-style: none;
+}
+ul li a {
+    text-decoration:none;
+    color:#000;
+    background:lightgrey;
+    height: fit-content;
+    min-height:300px;
+    width:250px;
+    padding:0;
+    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    transform: rotate(-6deg);
+    transition: transform .15s linear;
+}
+
+.urgent {
+    transform:rotate(-5deg);
+    position:relative;
+    top:5px;
+    background: red;
+    border: 2px solid red;
+}
+.important {
+    transform:rotate(-3deg);
+    position:relative;
+    top:-5px;
+    background: coral;
+    border: 2px solid coral;
+}
+.medium {
+    transform:rotate(2deg);
+    position:relative;
+    background: yellow;
+    border: 2px solid yellow;
+    top:-10px;
+}
+.low {
+    transform:rotate(-7deg);
+    position:relative;
+    background: lightgreen;
+    border: 2px solid lightgreen;
+    top:-4px;
+}
+.expired {
+    opacity: 0.5;
+}
+.priorityElem {
+    font-size: 20px;
+    text-align: center;
+}
+
+ul li:nth-child(even) a{
+    transform:rotate(4deg);
+    position:relative;
+    top:5px;
+}
+ul li:nth-child(3n) a{
+    transform:rotate(-3deg);
+    position:relative;
+    top:-5px;
+}
+ul li:nth-child(5n) a{
+    transform:rotate(5deg);
+    position:relative;
+    top:-10px;
+}
+
+ul li a:hover, ul li a:focus{
+    box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    transform: scale(1.25);
+    position:relative;
+    z-index:5;
+}
+.trashDiv{
+    height: 128px;
+    width: 128px;
+    background-image: url("trash-can.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    /*cursor: pointer;*/
+    border: 1px solid red;
+    border-radius: 50%;
+    right: 20px;
+    top: 50%;
+    transition: 0.5s;
+}
+.trashDiv:hover {
+    scale: 1.05;
+    background-color: red;
+}
+.trashDiv[drop-active=true] {
+    background-color: darkviolet;
+    scale: 1.15;
+}
